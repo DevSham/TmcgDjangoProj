@@ -20,7 +20,8 @@ install:
 #       - python manage.py migrate
 
 script:
-       - python manage.py test apiapp
+       #- python manage.py test apiapp
+       - coverage run manage.py test apiapp
 after_success:
   - coveralls
 
