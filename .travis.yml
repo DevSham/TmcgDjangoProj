@@ -3,29 +3,17 @@ python:
   - "3.7.3"
   - "3.6.7"
   - "2.7.15"
-
-services:
-      - sqlite3
-
+addons:
+  - sqlite3: "3.8.3"
+  
 env: 
     -DJANGO=2.2.1
-    
+
 install:
       - pip install -r requirements.txt
       - pip install coverage
+      - python manage.py migrate
     
-# before_script: 
-#       # - mysql -e 'create database test;' -u root
-#       - python manage.py makemigrations
-#       - python manage.py migrate
-
 script:
-       #- python manage.py test apiapp
-       - coverage run manage.py test apiapp
-after_success:
-  - coveralls
+       - python manage.py test apiapp
 
-# deploy:
-#   provider: heroku
-#   api_key:
-# secure: "385b3e25-f8d4-4f8a-b232-f73776b4884d"
