@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOME</title>
 </head>
+
 <body>
-        <a href="{% url 'create' %}">Deposit</a>
-        <a href="{% url 'list-all' %}">View Clients</a>
-        <h1>GREEN BANK</h1>
+    <a href="{% url 'create' %}">Deposit</a>
+    <a href="{% url 'list-all' %}">View Clients</a>
+    <h1>GREEN BANK</h1>
     <table>
-    <p>Alhamdullilah for this</p>
-    <tr><th>firstName</th><th>SecondName</th><th>Sex</th><th>Amount</th></tr>
-    {% for post in posts %}
-    <tr><td>{{ post.fname }}</td><td>{{ post.sname }}</td><td>{{ post.sex }}</td><td>{{ post.amount }}</td><td><a href="{% url 'update-entry' post.id %}"><button>edit</button></a></td></tr>
-    {% endfor %}
+        <p>Alhamdullilah for this</p>
+        <tr>
+            <th>firstName</th>
+            <th>SecondName</th>
+            <th>Sex</th>
+            <th>Amount</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.fname }}</td>
+            <td>{{ post.sname }}</td>
+            <td>{{ post.sex }}</td>
+            <td>{{ post.amount }}</td>
+            <td><a href="{% url 'update-entry' post.id %}"><button>edit</button></a></td>
+        </tr>
+        {% endfor %}
     </table>
 </body>
+
 </html>

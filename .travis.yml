@@ -1,5 +1,6 @@
 language: 
   - python
+  
 python:
   - "3.6.7"
 
@@ -9,9 +10,6 @@ services:
 env: 
   -DJANGO=2.2.1 
 
-# before_install:
-#   - export DJANGO_SETTINGS_MODULE = ApiProject.settings
-
 install:
 
   - pip install -r requirements.txt
@@ -20,7 +18,6 @@ before_script:
   - psql -c "CREATE DATABASE prodduct;" -U postgres    
 
 script:
-  # - python manage.py syncdb --noinput
   - python manage.py migrate
   - python manage.py test apiapp
 
