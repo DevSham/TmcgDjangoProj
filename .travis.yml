@@ -20,6 +20,6 @@ before_script:
   - psql -c "CREATE DATABASE prodduct;" -U postgres    
 
 script:
-  - python manage.py syncdb --noinput
+  # - python manage.py syncdb --noinput
   - python manage.py test
 
