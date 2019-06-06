@@ -1,26 +1,26 @@
-language: python
+language: 
+  - python
 python:
-    - "3.7.3"
-    - "3.6.7"
-    - "2.7.15"
+  - "3.6.7"
 
 services:
-    - postgresql
+  - postgresql
   
 env: 
-    -DJANGO=2.2.1 
+  -DJANGO=2.2.1 
 
 before_install:
   - export DJANGO_SETTINGS_MODULE = ApiProject.settings
 
 install:
-      - pip install -r requirements.txt
-      - pip install psycopg2 --quiet
+
+  - pip install -r requirements.txt
+  - pip install psycopg2 --quiet
 
 before_script:
-- psql -c "CREATE DATABASE prodduct;" -U postgres    
+  - psql -c "CREATE DATABASE prodduct;" -U postgres    
 
-      script:
-        - python manage.py syncdb --noinput
-        - python manage.py test
+script:
+  - python manage.py syncdb --noinput
+  - python manage.py test
 
