@@ -15,7 +15,6 @@ before_install:
 install:
 
   - pip install -r requirements.txt
-  - pip install psycopg2 --quiet
 
 before_script:
   - psql -c "CREATE DATABASE prodduct;" -U postgres    
