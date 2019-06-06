@@ -21,5 +21,6 @@ before_script:
 
 script:
   # - python manage.py syncdb --noinput
-  - python manage.py test
+  - python manage.py migrate
+  - python manage.py test apiapp
 
