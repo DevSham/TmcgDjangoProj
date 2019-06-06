@@ -1,6 +1,6 @@
 language: 
   - python
-  
+
 python:
   - "3.6.7"
 
@@ -21,3 +21,8 @@ script:
   - python manage.py migrate
   - python manage.py test apiapp
 
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "76873ecd-edca-42e7-8bbf-eaf7ad7bbf61"
