@@ -3,6 +3,7 @@ body{
     font-size: 20px;
     font-style: italic;
     text-align: center;
+    padding-left: 40px;
 }
 p{
     color: green;
@@ -65,4 +66,6 @@ p{
     table {
         
         text-align: center;
+        align-content: center;
+        
 }
