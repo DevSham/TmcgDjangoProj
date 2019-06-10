@@ -30,6 +30,6 @@ deploy:
   provider: heroku
   api_key:
     secure: "d08f6cbe-521c-499b-8f0e-28478c0394be"
-  app: djangocrud
+  app: "djangocrud"
   on:
-    repo: TmcgDjangoProj
+    repo: "TmcgDjangoProj"
