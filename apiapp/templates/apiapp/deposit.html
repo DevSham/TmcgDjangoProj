@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,17 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deposit</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
     <a href="{% url 'create' %}">Deposit</a>
     <a href="{% url 'list-all' %}">View Clients</a>
-    <h3>Deposit page</h3>
+    <h2>Deposit page</h2>
+    <table>
     <form method="POST">
         {%csrf_token%}
         {{form}}
         <button type="submit">save</button>
     </form>
+    </table>
 </body>
 
 </html>
