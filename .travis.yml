@@ -21,15 +21,11 @@ script:
   - python manage.py migrate
   - python manage.py test apiapp
 
-
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure: "76873ecd-edca-42e7-8bbf-eaf7ad7bbf61"
 deploy:
   provider: heroku
   api_key:
     secure: "d08f6cbe-521c-499b-8f0e-28478c0394be"
   app: "djangocrud"
   on:
-    repo: "TmcgDjangoProj"
+    all_branches: true
+
