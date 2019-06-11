@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -20,9 +20,19 @@
     <h2>Deposit page</h2>
     <form method="POST">
         {%csrf_token%}
-        {{ form|crispy }}
-        <button type="submit">save</button>
+        <div class="row">
+            <div class="col-6">
+              {{ form.fname|as_crispy_field }}
+            </div>
+            <div class="col-6">
+              {{ form.sname|as_crispy_field }}
+            </div>
+          </div>
+          {{ form.sex|as_crispy_field }}
+          {{ form.amount|as_crispy_field }}
+          <button type="submit" class="btn btn-success">Send</button>
     </form>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
