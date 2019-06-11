@@ -3,7 +3,8 @@ body{
     font-size: 20px;
     font-style: italic;
     text-align: center;
-    padding-left: 40px;
+    padding-left: 50px;
+    padding-left: 50px;
 }
 p{
     color: green;
@@ -46,7 +47,7 @@ p{
   h1 {
     color:green;
     text-align: center;
-    font-family:Arial Narrow Bold;
+    font-family:Arial;
     font-size: 20px;
     font-weight: bold;
     padding-top: 80px;
