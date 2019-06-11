@@ -15,8 +15,10 @@
 </head>
 
 <body>
-    <a href="{% url 'create' %}">Deposit</a>
-    <a href="{% url 'list-all' %}">View Clients</a>
+    <ul>
+    <li><a href="{% url 'create' %}">Deposit</a></li>
+    <li><a href="{% url 'list-all' %}">View Clients</a></li>
+    </ul>
     <h2>Deposit page</h2>
     <form method="POST">
         {%csrf_token%}
