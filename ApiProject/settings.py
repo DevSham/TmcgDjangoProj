@@ -160,4 +160,5 @@ STATIC_ROOT  = os.path.join(PROJECT_ROOT, 'staticfiles')
 #)
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
