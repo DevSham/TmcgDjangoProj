@@ -28,4 +28,4 @@ deploy:
   app: "djangocrud"
   on:
     all_branches: true
-
+  
