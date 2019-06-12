@@ -22,16 +22,7 @@
     <h2>Deposit page</h2>
     <form method="POST">
         {%csrf_token%}
-        <div class="row">
-            <div class="col-6">
-              {{ form.fname|as_crispy_field }}
-            </div>
-            <div class="col-6">
-              {{ form.sname|as_crispy_field }}
-            </div>
-          </div>
-          {{ form.sex|as_crispy_field }}
-          {{ form.amount|as_crispy_field }}
+        {{form|crispy}}
           <button type="submit" class="btn btn-success">Send</button>
     </form>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
