@@ -4,40 +4,67 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOME</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        
 </head>
 
 <body>
-    <ul>
-    <li><a href="{% url 'create' %}">Deposit</a></li>
-    <li><a href="{% url 'list-all' %}">View Clients</a></li>
-    </ul>
-    <h1>TMCG BANK</h1>
-    <table>
-        <h2>Clients Page</h2>
-        <tr>
-            <th>firstName</th>
-            <th>SecondName</th>
-            <th>Sex</th>
-            <th>Amount</th>
-        </tr>
-        {% for post in posts %}
-        <tr>
-            <td>{{ post.fname }}</td>
-            <td>{{ post.sname }}</td>
-            <td>{{ post.sex }}</td>
-            <td>{{ post.amount }}</td>
-            <td><a href="{% url 'update-entry' post.id %}"><button>edit</button></a></td>
-        </tr>
-        {% endfor %}
-    </table>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: purple;">
+                <a class="navbar-brand text-white" href="#">TMCG BANK</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav text-center">
+                  <ul class="navbar-nav ">
+                    <li class="nav-item active ">
+                      <a class="nav-link text-white" href="{% url 'list-all' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{% url 'create' %}">Deposit </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="{% url 'list-all' %}">Clients</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        <p style="padding-top: 50px"></p>
+        <div class="container">
+            <div class="row">
+                <h2>Clients Page</h2>
+            </div>
+            <div class="row">
+                <table class="table table-hover ">
+                <tr>
+                    <thead class="thead-light">
+                      <th scope="col">firstName</th>
+                      <th scope="col" >SecondName</th>
+                      <th scope="col">Sex</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Edit</th>
+                    </thead>
+                </tr>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ post.fname }}</td>
+                    <td>{{ post.sname }}</td>
+                    <td>{{ post.sex }}</td>
+                    <td>{{ post.amount }}</td>
+                    <td><a href="{% url 'update-entry' post.id %}"><button class="btn btn-info">edit</button></a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

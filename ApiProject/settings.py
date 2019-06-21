@@ -97,8 +97,8 @@ WSGI_APPLICATION = 'ApiProject.wsgi.application'
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'prodduct',
-#         'USER':'postgres',
-#         'PASSWORD':'',
+#         'USER':'shamim',
+#         'PASSWORD':'mim',
 #         'HOST': 'localhost',
 #         'PORT':'5432'
 #     }
